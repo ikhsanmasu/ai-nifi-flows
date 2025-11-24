@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1763970140103,
+    "description" : "check if table in postgress already exist inside clickhouse",
+    "identifier" : "check-clickhouse-table",
+    "lastModifiedTimestamp" : 1763970140103,
+    "name" : "check clickhouse table",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
