@@ -8,9 +8,9 @@
   "flow" : {
     "createdTimestamp" : 1763975596028,
     "description" : "",
-    "identifier" : "Ingestion",
+    "identifier" : "ingestion",
     "lastModifiedTimestamp" : 1763975596028,
-    "name" : "Ingestion",
+    "name" : "ingestion",
     "versionCount" : 0
   },
   "flowContents" : {
@@ -1032,7 +1032,7 @@
   "parameterProviders" : { },
   "snapshotMetadata" : {
     "author" : "admin",
-    "flowIdentifier" : "Ingestion",
+    "flowIdentifier" : "ingestion",
     "timestamp" : 1763975597210
   }
 }
