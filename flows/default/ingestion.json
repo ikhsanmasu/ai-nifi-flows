@@ -19,13 +19,43 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "f4fedea7-dc50-3c05-a876-9bbed5747ae6",
-        "name" : "LogAttribute",
+        "id" : "9904c563-37c5-31ef-a003-2d898f77b357",
+        "name" : "EvaluateJsonPath",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ad2b5963-ddee-34bd-a2c1-ec50ba14801f",
+      "identifier" : "ce3a5818-485b-36f8-bd2e-6ff5ea9d4f3b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "splits" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "16e7b721-612a-3f8b-aeba-a23e6de47774",
+        "name" : "SplitRecord",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "921ca9f3-5f35-3c8c-8d8e-8e0077641fea",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ceefa582-de99-312c-9895-e290f08d31db",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -49,28 +79,28 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "9904c563-37c5-31ef-a003-2d898f77b357",
-        "name" : "EvaluateJsonPath",
+        "id" : "f4fedea7-dc50-3c05-a876-9bbed5747ae6",
+        "name" : "LogAttribute",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ce3a5818-485b-36f8-bd2e-6ff5ea9d4f3b",
+      "identifier" : "d5716cf5-e0cb-3cbb-a876-810de16c507d",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "splits" ],
+      "selectedRelationships" : [ "success" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "16e7b721-612a-3f8b-aeba-a23e6de47774",
-        "name" : "SplitRecord",
+        "id" : "921ca9f3-5f35-3c8c-8d8e-8e0077641fea",
+        "name" : "UpdateAttribute",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 2
+      "zIndex" : 4
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -958,6 +988,79 @@
       "type" : "org.apache.nifi.processors.standard.SplitRecord",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.6.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "921ca9f3-5f35-3c8c-8d8e-8e0077641fea",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -552.0,
+        "y" : 504.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "canonical-value-lookup-cache-size" : "100",
+        "clickhouse.query" : "SELECT COUNT() FROM information_schema.tables WHERE table_schema = '${schema}' AND table_name = '${table}'"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "canonical-value-lookup-cache-size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "clickhouse.query" : {
+          "displayName" : "clickhouse.query",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "clickhouse.query",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ "failure", "unmatched" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1068,7 +1171,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -552.0,
-        "y" : 496.0
+        "y" : 752.0
       },
       "properties" : {
         "character-set" : "UTF-8",
@@ -1171,6 +1274,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "ingestion",
-    "timestamp" : 1763979989736
+    "timestamp" : 1764041078248
   }
 }
