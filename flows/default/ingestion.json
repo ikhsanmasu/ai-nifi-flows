@@ -66,7 +66,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "b9bb95e4-019a-1000-475c-972b4c6bf7e6",
-        "name" : "SplitRecord",
+        "name" : "Split Record Per Table",
         "type" : "PROCESSOR"
       },
       "zIndex" : 10
@@ -79,7 +79,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "b9bb95e4-019a-1000-475c-972b4c6bf7e6",
-        "name" : "SplitRecord",
+        "name" : "Split Record Per Table",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -1154,7 +1154,7 @@
         "name" : "Table Not Exist",
         "portFunction" : "STANDARD",
         "position" : {
-          "x" : -696.0,
+          "x" : -808.0,
           "y" : -248.0
         },
         "scheduledState" : "ENABLED",
@@ -2204,65 +2204,6 @@
         "bends" : [ ],
         "componentType" : "CONNECTION",
         "destination" : {
-          "comments" : "",
-          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-          "id" : "b9a1937d-019a-1000-c237-b600d4db2a3a",
-          "name" : "SplitRecord",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-        "identifier" : "5ecedb19-1c2f-396c-ab5b-6bad50c47d5e",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "" ],
-        "source" : {
-          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-          "id" : "2865cdab-b94b-3b17-a320-4159e19752c5",
-          "name" : "Table Detail",
-          "type" : "INPUT_PORT"
-        },
-        "zIndex" : 10
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-          "id" : "b9a1937c-019a-1000-838f-7a262dedd7fd",
-          "name" : "Check Table Exist Query",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-        "identifier" : "6a8960ba-ab77-30f2-9873-50b41ba3bb0c",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "matched" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-          "id" : "b9a19379-019a-1000-fe55-778f3319ba5e",
-          "name" : "EvaluateJsonPath",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 11
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "bdbaf3a4-4912-39d3-b699-4fa403e3744b",
           "name" : "Database Not Exist",
@@ -2282,7 +2223,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9d74897-019a-1000-41d2-f0b10132d854",
-          "name" : "Route Database Existance",
+          "name" : "Route On Database Existence",
           "type" : "PROCESSOR"
         },
         "zIndex" : 14
@@ -2295,7 +2236,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9d74897-019a-1000-41d2-f0b10132d854",
-          "name" : "Route Database Existance",
+          "name" : "Route On Database Existence",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -2312,7 +2253,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937a-019a-1000-c964-a555ff3de2a9",
-          "name" : "EvaluateJsonPath",
+          "name" : "Promote Database and Table Existence",
           "type" : "PROCESSOR"
         },
         "zIndex" : 12
@@ -2325,7 +2266,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937e-019a-1000-0edb-a5f14849b1ec",
-          "name" : "InvokeHTTP",
+          "name" : "Check Table Clickhouse",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -2342,7 +2283,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937c-019a-1000-838f-7a262dedd7fd",
-          "name" : "Check Table Exist Query",
+          "name" : "Check Table Clickhouse Exist Query",
           "type" : "PROCESSOR"
         },
         "zIndex" : 4
@@ -2355,7 +2296,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937a-019a-1000-c964-a555ff3de2a9",
-          "name" : "EvaluateJsonPath",
+          "name" : "Promote Database and Table Existence",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -2372,7 +2313,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937e-019a-1000-0edb-a5f14849b1ec",
-          "name" : "InvokeHTTP",
+          "name" : "Check Table Clickhouse",
           "type" : "PROCESSOR"
         },
         "zIndex" : 5
@@ -2384,38 +2325,8 @@
         "destination" : {
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-          "id" : "b9a19379-019a-1000-fe55-778f3319ba5e",
-          "name" : "EvaluateJsonPath",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-        "identifier" : "b9a19384-019a-1000-7145-4484e5909b9f",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "splits" ],
-        "source" : {
-          "comments" : "",
-          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-          "id" : "b9a1937d-019a-1000-c237-b600d4db2a3a",
-          "name" : "SplitRecord",
-          "type" : "PROCESSOR"
-        },
-        "zIndex" : 2
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937f-019a-1000-dcd0-d9c402705b1b",
-          "name" : "RouteOnAttribute",
+          "name" : "Route On Table Existence",
           "type" : "PROCESSOR"
         },
         "flowFileExpiration" : "0 sec",
@@ -2432,7 +2343,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9d74897-019a-1000-41d2-f0b10132d854",
-          "name" : "Route Database Existance",
+          "name" : "Route On Database Existence",
           "type" : "PROCESSOR"
         },
         "zIndex" : 13
@@ -2461,7 +2372,7 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937f-019a-1000-dcd0-d9c402705b1b",
-          "name" : "RouteOnAttribute",
+          "name" : "Route On Table Existence",
           "type" : "PROCESSOR"
         },
         "zIndex" : 15
@@ -2490,10 +2401,39 @@
           "comments" : "",
           "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
           "id" : "b9a1937f-019a-1000-dcd0-d9c402705b1b",
-          "name" : "RouteOnAttribute",
+          "name" : "Route On Table Existence",
           "type" : "PROCESSOR"
         },
         "zIndex" : 7
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
+          "id" : "b9a1937c-019a-1000-838f-7a262dedd7fd",
+          "name" : "Check Table Clickhouse Exist Query",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
+        "identifier" : "ffb5a44a-4b21-335a-af75-b1052ce1f1fc",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "" ],
+        "source" : {
+          "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
+          "id" : "2865cdab-b94b-3b17-a320-4159e19752c5",
+          "name" : "Table Detail",
+          "type" : "INPUT_PORT"
+        },
+        "zIndex" : 16
       } ],
       "controllerServices" : [ ],
       "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -2515,7 +2455,7 @@
         "portFunction" : "STANDARD",
         "position" : {
           "x" : -112.0,
-          "y" : -936.0
+          "y" : -456.0
         },
         "scheduledState" : "ENABLED",
         "type" : "INPUT_PORT"
@@ -2585,100 +2525,9 @@
         "concurrentlySchedulableTaskCount" : 1,
         "executionNode" : "ALL",
         "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-        "identifier" : "b9a19379-019a-1000-fe55-778f3319ba5e",
-        "maxBackoffPeriod" : "10 mins",
-        "name" : "EvaluateJsonPath",
-        "penaltyDuration" : "30 sec",
-        "position" : {
-          "x" : -168.0,
-          "y" : -536.0
-        },
-        "properties" : {
-          "schema" : "$.table_schema",
-          "Destination" : "flowfile-attribute",
-          "Max String Length" : "20 MB",
-          "Return Type" : "auto-detect",
-          "Null Value Representation" : "empty string",
-          "table" : "$.table_name",
-          "Path Not Found Behavior" : "ignore"
-        },
-        "propertyDescriptors" : {
-          "schema" : {
-            "displayName" : "schema",
-            "dynamic" : true,
-            "identifiesControllerService" : false,
-            "name" : "schema",
-            "sensitive" : false
-          },
-          "Destination" : {
-            "displayName" : "Destination",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Destination",
-            "sensitive" : false
-          },
-          "Max String Length" : {
-            "displayName" : "Max String Length",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Max String Length",
-            "sensitive" : false
-          },
-          "Return Type" : {
-            "displayName" : "Return Type",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Return Type",
-            "sensitive" : false
-          },
-          "Null Value Representation" : {
-            "displayName" : "Null Value Representation",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Null Value Representation",
-            "sensitive" : false
-          },
-          "table" : {
-            "displayName" : "table",
-            "dynamic" : true,
-            "identifiesControllerService" : false,
-            "name" : "table",
-            "sensitive" : false
-          },
-          "Path Not Found Behavior" : {
-            "displayName" : "Path Not Found Behavior",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Path Not Found Behavior",
-            "sensitive" : false
-          }
-        },
-        "retriedRelationships" : [ ],
-        "retryCount" : 10,
-        "runDurationMillis" : 0,
-        "scheduledState" : "ENABLED",
-        "schedulingPeriod" : "0 sec",
-        "schedulingStrategy" : "TIMER_DRIVEN",
-        "style" : { },
-        "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
-        "yieldDuration" : "1 sec"
-      }, {
-        "autoTerminatedRelationships" : [ "failure", "unmatched" ],
-        "backoffMechanism" : "PENALIZE_FLOWFILE",
-        "bulletinLevel" : "WARN",
-        "bundle" : {
-          "artifact" : "nifi-standard-nar",
-          "group" : "org.apache.nifi",
-          "version" : "2.6.0"
-        },
-        "comments" : "",
-        "componentType" : "PROCESSOR",
-        "concurrentlySchedulableTaskCount" : 1,
-        "executionNode" : "ALL",
-        "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
         "identifier" : "b9a1937a-019a-1000-c964-a555ff3de2a9",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "EvaluateJsonPath",
+        "name" : "Promote Database and Table Existence",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -168.0,
@@ -2769,7 +2618,7 @@
         "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
         "identifier" : "b9a1937c-019a-1000-838f-7a262dedd7fd",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "Check Table Exist Query",
+        "name" : "Check Table Clickhouse Exist Query",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -168.0,
@@ -2827,65 +2676,6 @@
         "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
         "yieldDuration" : "1 sec"
       }, {
-        "autoTerminatedRelationships" : [ "failure", "original" ],
-        "backoffMechanism" : "PENALIZE_FLOWFILE",
-        "bulletinLevel" : "WARN",
-        "bundle" : {
-          "artifact" : "nifi-standard-nar",
-          "group" : "org.apache.nifi",
-          "version" : "2.6.0"
-        },
-        "comments" : "",
-        "componentType" : "PROCESSOR",
-        "concurrentlySchedulableTaskCount" : 1,
-        "executionNode" : "ALL",
-        "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
-        "identifier" : "b9a1937d-019a-1000-c237-b600d4db2a3a",
-        "maxBackoffPeriod" : "10 mins",
-        "name" : "SplitRecord",
-        "penaltyDuration" : "30 sec",
-        "position" : {
-          "x" : -168.0,
-          "y" : -768.0
-        },
-        "properties" : {
-          "Record Writer" : "b478ac37-39c7-3c2b-8a32-2184fa3ebe66",
-          "Record Reader" : "8f3e3f66-2f00-3a3d-9a9d-0ac160fffcc1",
-          "Records Per Split" : "1"
-        },
-        "propertyDescriptors" : {
-          "Record Writer" : {
-            "displayName" : "Record Writer",
-            "dynamic" : false,
-            "identifiesControllerService" : true,
-            "name" : "Record Writer",
-            "sensitive" : false
-          },
-          "Record Reader" : {
-            "displayName" : "Record Reader",
-            "dynamic" : false,
-            "identifiesControllerService" : true,
-            "name" : "Record Reader",
-            "sensitive" : false
-          },
-          "Records Per Split" : {
-            "displayName" : "Records Per Split",
-            "dynamic" : false,
-            "identifiesControllerService" : false,
-            "name" : "Records Per Split",
-            "sensitive" : false
-          }
-        },
-        "retriedRelationships" : [ ],
-        "retryCount" : 10,
-        "runDurationMillis" : 0,
-        "scheduledState" : "ENABLED",
-        "schedulingPeriod" : "0 sec",
-        "schedulingStrategy" : "TIMER_DRIVEN",
-        "style" : { },
-        "type" : "org.apache.nifi.processors.standard.SplitRecord",
-        "yieldDuration" : "1 sec"
-      }, {
         "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
         "backoffMechanism" : "PENALIZE_FLOWFILE",
         "bulletinLevel" : "WARN",
@@ -2901,7 +2691,7 @@
         "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
         "identifier" : "b9a1937e-019a-1000-0edb-a5f14849b1ec",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "InvokeHTTP",
+        "name" : "Check Table Clickhouse",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -168.0,
@@ -3215,7 +3005,7 @@
         "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
         "identifier" : "b9a1937f-019a-1000-dcd0-d9c402705b1b",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "RouteOnAttribute",
+        "name" : "Route On Table Existence",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -168.0,
@@ -3274,7 +3064,7 @@
         "groupIdentifier" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
         "identifier" : "b9d74897-019a-1000-41d2-f0b10132d854",
         "maxBackoffPeriod" : "10 mins",
-        "name" : "Route Database Existance",
+        "name" : "Route On Database Existence",
         "penaltyDuration" : "30 sec",
         "position" : {
           "x" : -168.0,
@@ -3338,7 +3128,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "b9bb95e4-019a-1000-475c-972b4c6bf7e6",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "SplitRecord",
+      "name" : "Split Record Per Table",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -1152.0,
@@ -3523,7 +3313,9 @@
       "scheduledState" : "ENABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
+      "style" : {
+        "background-color" : "#ff0505"
+      },
       "type" : "org.apache.nifi.processors.standard.ExecuteSQLRecord",
       "yieldDuration" : "1 sec"
     }, {
@@ -3629,6 +3421,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "ingestion",
-    "timestamp" : 1764055953148
+    "timestamp" : 1764057558813
   }
 }
