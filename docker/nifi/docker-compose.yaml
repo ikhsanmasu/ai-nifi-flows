@@ -147,6 +147,11 @@ volumes:
   nifi_state:
   nifi_logs:
 
+  zookeeper_data:
+  zookeeper_log:
+  
+  kafka_data:
+
 networks:
   pipeline_network:
     driver: bridge
