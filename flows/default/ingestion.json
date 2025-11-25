@@ -2378,7 +2378,7 @@
           "esqlrecord-record-writer" : "b55ee130-0318-3179-a9a7-1c212f754fda",
           "dbf-default-precision" : "10",
           "Max Wait Time" : "0 seconds",
-          "SQL Query" : "SELECT table_schema, table_name\nFROM information_schema.tables\nWHERE table_type = 'BASE TABLE' AND table_catalog = 'maxmar'\nORDER BY table_schema, table_name",
+          "SQL Query" : "SELECT table_schema, table_name\nFROM information_schema.tables\nWHERE table_type = 'BASE TABLE' AND table_catalog = 'maxmar' AND table_schema = 'cultivation'\nORDER BY table_schema, table_name",
           "Database Connection Pooling Service" : "4faa72aa-7110-3fc2-bdad-c158af036d61",
           "esql-auto-commit" : "true",
           "dbf-user-logical-types" : "false",
@@ -2493,9 +2493,7 @@
         "scheduledState" : "ENABLED",
         "schedulingPeriod" : "0 sec",
         "schedulingStrategy" : "TIMER_DRIVEN",
-        "style" : {
-          "background-color" : "#ff0505"
-        },
+        "style" : { },
         "type" : "org.apache.nifi.processors.standard.ExecuteSQLRecord",
         "yieldDuration" : "1 sec"
       }, {
@@ -3581,6 +3579,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "ingestion",
-    "timestamp" : 1764062116788
+    "timestamp" : 1764063116594
   }
 }
