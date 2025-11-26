@@ -60,7 +60,7 @@ docker restart <container_name>
     - Repository Owner: ikhsamasu
     - Repository Name: ai-nifi-flows
     - Authentication Type: Personal Access Token
-    - Personal Access Token: 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
+    - Personal Access Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     - Default Branch: ikhsan/dev
     - Repository Path: flows
     
