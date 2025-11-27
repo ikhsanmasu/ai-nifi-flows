@@ -101,6 +101,8 @@ services:
       NIFI_JVM_HEAP_MAX: 4g
     volumes:
       - ./nifi-jdbc-drivers:/opt/nifi/nifi-current/lib/jdbc:ro
+      - ./nifi-python:/opt/nifi/nifi-current/python_extensions
+
       - nifi_conf:/opt/nifi/nifi-current/conf
       - nifi_content_repository:/opt/nifi/nifi-current/content_repository
       - nifi_database_repository:/opt/nifi/nifi-current/database_repository

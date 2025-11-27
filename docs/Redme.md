@@ -1,29 +1,6 @@
--------------------------------------------------------------------------------------------------------------------------
 # postgres note
+## sesuaikan setting seperti contoh dibawah
 
-## Edit postgresql.conf
-Lokasi biasanya: /var/lib/postgresql/data/postgresql.conf
-
-wal_level = logical
-max_replication_slots = 4
-max_wal_senders = 4
-
--------------------------------------------------------------------------------------------------------------------------
-# debezium note
-
-sesuaikan debezium-register-connector.json
-
-lalu register
-curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d @debezium-register-connector.json
-
-cek connector status
-curl -s http://localhost:8083/connectors/postgres-connector/status
-
-Cek replication slot di PostgreSQL
-docker exec -it postgres-maxmar psql -U postgres -d maxmar -c "SELECT slot_name, active FROM pg_replication_slots;"
-
-
-## atau kalo pake docker
 -- Jalankan ini di PostgreSQL existing:
 docker exec -it <container_name> psql -U postgres
 
@@ -50,11 +27,23 @@ ALTER SYSTEM SET max_wal_senders = 4;
 
 
 docker restart <container_name>
+----------------------------------------------------------------------------------
+# debezium note
 
+sesuaikan debezium-register-connector.json
+
+lalu register
+curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d @debezium-register-connector.json
+
+cek connector status
+curl -s http://localhost:8083/connectors/postgres-connector/status
+
+Cek replication slot di PostgreSQL
+docker exec -it postgres-maxmar psql -U postgres -d maxmar -c "SELECT slot_name, active FROM pg_replication_slots;"
 ----------------------------------------------------------------------------------
 # Nifi note
 
-## Required Registry Client
+## Required Registry Client (Example)
 1. Registry Clients - GitHubFlowRegistryClient 2.6.0	
     - GitHub API URL: https://api.github.com/
     - Repository Owner: ikhsamasu
@@ -72,6 +61,14 @@ docker restart <container_name>
     - Database Driver Locations(s): /opt/nifi/nifi-current/lib/jdbc/postgresql-42.7.3.jar
     - Database User: postgres
     - Password: postgres
+    - Validation Query: SELECT 1
+
+2. DBCPConnectionPool - Clickhouse
+    - Database Connection URL: jdbc:ch://host.docker.internal:8123
+    - Database Driver Class Name: com.clickhouse.jdbc.ClickHouseDriver
+    - Database Driver Location(s): /opt/nifi/nifi-current/lib/jdbc/clickhouse-jdbc-0.6.5-all.jar
+    - Database User: default
+    - Password: (kosong atau password kamu)
     - Validation Query: SELECT 1
 
 
