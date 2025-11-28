@@ -20,7 +20,7 @@ services:
       
       # Listeners
       KAFKA_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://0.0.0.0:9092,CONTROLLER://kafka:9093
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://kafka:9092, 
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       
@@ -141,6 +141,44 @@ services:
       - pipeline_network
     restart: unless-stopped
 
+  # === Clickhouse ===
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    ports:
+      - "8123:8123"  # HTTP interface
+      - "9000:9000"  # Native protocol
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
+    environment:
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_USER: admin
+      CLICKHOUSE_PASSWORD: password123
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    networks:
+      - pipeline_network
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # === Ui Clickhouse ===
+  tabix:
+    image: spoonest/clickhouse-tabix-web-client:latest
+    container_name: tabix-ui
+    ports:
+      - "18081:80"
+    depends_on:
+      - clickhouse
+    networks:
+      - pipeline_network
+
 volumes:
   kafka_data:
   nifi_conf:
@@ -150,6 +188,11 @@ volumes:
   nifi_provenance_repository:
   nifi_state:
   nifi_logs:
+
+  clickhouse_data:
+    driver: local
+  clickhouse_logs:
+    driver: local
 
 networks:
   pipeline_network:
