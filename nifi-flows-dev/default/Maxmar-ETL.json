@@ -14,6 +14,38 @@
     "connections" : [ {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : -1222.0,
+        "y" : 624.0
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c3936c08-019a-1000-4200-11e698f719f6",
+        "name" : "Get detail postgres table",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1d5ba54a-d299-37c2-bcf1-94ef4cdc257b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "febf2f15-5fcc-3b50-afa8-f30d4435852e",
+        "id" : "a31e0270-8b49-3ea9-bccf-b63872e62dad",
+        "name" : "Table Exist",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 24
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -1987,7 +2019,7 @@
         "name" : "Create Database Target",
         "penaltyDuration" : "30 sec",
         "position" : {
-          "x" : 472.0,
+          "x" : 480.0,
           "y" : 592.0
         },
         "properties" : {
@@ -3982,7 +4014,7 @@
         },
         "properties" : {
           "Regular Expression" : "(?s)(^.*$)",
-          "Replacement Value" : "${ddl.6.create_materialize_view}",
+          "Replacement Value" : "${ddl.6.create_materialized_view}",
           "Evaluation Mode" : "Entire text",
           "Line-by-Line Evaluation Mode" : "All",
           "Character Set" : "UTF-8",
@@ -6415,6 +6447,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Maxmar-ETL",
-    "timestamp" : 1764316957550
+    "timestamp" : 1764320099279
   }
 }
