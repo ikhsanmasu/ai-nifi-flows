@@ -215,7 +215,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "63378e19-2aa6-3c95-8f1b-a7b85b02ff9f",
-        "name" : "GenerateFlowFile",
+        "name" : "Hanya run once untuk pertama setup clickhouse",
         "type" : "PROCESSOR"
       },
       "zIndex" : 16
@@ -6028,7 +6028,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "63378e19-2aa6-3c95-8f1b-a7b85b02ff9f",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "GenerateFlowFile",
+      "name" : "Hanya run once untuk pertama setup clickhouse",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -1152.0,
@@ -6447,6 +6447,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Maxmar-ETL",
-    "timestamp" : 1764321917954
+    "timestamp" : 1764324539494
   }
 }
