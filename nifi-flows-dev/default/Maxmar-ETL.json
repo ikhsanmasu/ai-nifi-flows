@@ -15,8 +15,8 @@
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
       "bends" : [ {
-        "x" : -1222.0,
-        "y" : 624.0
+        "x" : -1240.0,
+        "y" : 640.0
       } ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -6103,7 +6103,7 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "24 hour",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
@@ -6447,6 +6447,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Maxmar-ETL",
-    "timestamp" : 1764320099279
+    "timestamp" : 1764321201460
   }
 }
