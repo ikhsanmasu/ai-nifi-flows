@@ -991,6 +991,35 @@
         "destination" : {
           "comments" : "",
           "groupId" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
+          "id" : "d3594abf-d19c-3c4b-ad55-3023e4d182c1",
+          "name" : "PostgresToClickHouseDebeziumDDL",
+          "type" : "PROCESSOR"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
+        "identifier" : "22e71d7f-af2b-36b7-a32d-63a9d50f97d4",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "" ],
+        "source" : {
+          "groupId" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
+          "id" : "be1a8d3a-2d99-3efe-8794-351d3afacb7a",
+          "name" : "Create Table",
+          "type" : "INPUT_PORT"
+        },
+        "zIndex" : 28
+      }, {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "comments" : "",
+          "groupId" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
           "id" : "c965b767-019a-1000-897b-f66736cd1448",
           "name" : "ddl kafka table as content",
           "type" : "PROCESSOR"
@@ -1117,7 +1146,7 @@
         },
         "flowFileExpiration" : "0 sec",
         "groupIdentifier" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
-        "identifier" : "642fd9ab-39a5-3a21-a0b2-188a131e726e",
+        "identifier" : "671dc353-a271-3406-8030-d7bc7b34f5f8",
         "labelIndex" : 0,
         "loadBalanceCompression" : "DO_NOT_COMPRESS",
         "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -1128,11 +1157,11 @@
         "source" : {
           "comments" : "",
           "groupId" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
-          "id" : "85f81a82-3e1a-33b1-a064-70035adfd58d",
+          "id" : "d3594abf-d19c-3c4b-ad55-3023e4d182c1",
           "name" : "PostgresToClickHouseDebeziumDDL",
           "type" : "PROCESSOR"
         },
-        "zIndex" : 7
+        "zIndex" : 29
       }, {
         "backPressureDataSizeThreshold" : "1 GB",
         "backPressureObjectThreshold" : 10000,
@@ -1193,35 +1222,6 @@
           "type" : "PROCESSOR"
         },
         "zIndex" : 19
-      }, {
-        "backPressureDataSizeThreshold" : "1 GB",
-        "backPressureObjectThreshold" : 10000,
-        "bends" : [ ],
-        "componentType" : "CONNECTION",
-        "destination" : {
-          "comments" : "",
-          "groupId" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
-          "id" : "85f81a82-3e1a-33b1-a064-70035adfd58d",
-          "name" : "PostgresToClickHouseDebeziumDDL",
-          "type" : "PROCESSOR"
-        },
-        "flowFileExpiration" : "0 sec",
-        "groupIdentifier" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
-        "identifier" : "b108bd60-b663-3eb3-82d7-f146cbcac3e5",
-        "labelIndex" : 0,
-        "loadBalanceCompression" : "DO_NOT_COMPRESS",
-        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-        "name" : "",
-        "partitioningAttribute" : "",
-        "prioritizers" : [ ],
-        "selectedRelationships" : [ "" ],
-        "source" : {
-          "groupId" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
-          "id" : "be1a8d3a-2d99-3efe-8794-351d3afacb7a",
-          "name" : "Create Table",
-          "type" : "INPUT_PORT"
-        },
-        "zIndex" : 6
       }, {
         "backPressureDataSizeThreshold" : "1 GB",
         "backPressureObjectThreshold" : 10000,
@@ -1652,39 +1652,6 @@
         "schedulingStrategy" : "TIMER_DRIVEN",
         "style" : { },
         "type" : "org.apache.nifi.processors.standard.LogAttribute",
-        "yieldDuration" : "1 sec"
-      }, {
-        "autoTerminatedRelationships" : [ "failure", "original" ],
-        "backoffMechanism" : "PENALIZE_FLOWFILE",
-        "bulletinLevel" : "WARN",
-        "bundle" : {
-          "artifact" : "python-extensions",
-          "group" : "org.apache.nifi",
-          "version" : "2.0.0"
-        },
-        "comments" : "",
-        "componentType" : "PROCESSOR",
-        "concurrentlySchedulableTaskCount" : 1,
-        "executionNode" : "ALL",
-        "groupIdentifier" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
-        "identifier" : "85f81a82-3e1a-33b1-a064-70035adfd58d",
-        "maxBackoffPeriod" : "10 mins",
-        "name" : "PostgresToClickHouseDebeziumDDL",
-        "penaltyDuration" : "30 sec",
-        "position" : {
-          "x" : -232.0,
-          "y" : 80.0
-        },
-        "properties" : { },
-        "propertyDescriptors" : { },
-        "retriedRelationships" : [ ],
-        "retryCount" : 10,
-        "runDurationMillis" : 25,
-        "scheduledState" : "ENABLED",
-        "schedulingPeriod" : "0 sec",
-        "schedulingStrategy" : "TIMER_DRIVEN",
-        "style" : { },
-        "type" : "PostgresToClickHouseDebeziumDDL",
         "yieldDuration" : "1 sec"
       }, {
         "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
@@ -4095,6 +4062,39 @@
         "style" : { },
         "type" : "org.apache.nifi.processors.standard.ReplaceText",
         "yieldDuration" : "1 sec"
+      }, {
+        "autoTerminatedRelationships" : [ "failure", "original" ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "python-extensions",
+          "group" : "org.apache.nifi",
+          "version" : "2.0.0"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "5deb3951-f6de-3780-8231-1ef31a80c1c5",
+        "identifier" : "d3594abf-d19c-3c4b-ad55-3023e4d182c1",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "PostgresToClickHouseDebeziumDDL",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -232.0,
+          "y" : 72.0
+        },
+        "properties" : { },
+        "propertyDescriptors" : { },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 25,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "0 sec",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "PostgresToClickHouseDebeziumDDL",
+        "yieldDuration" : "1 sec"
       } ],
       "remoteProcessGroups" : [ ],
       "scheduledState" : "ENABLED",
@@ -6447,6 +6447,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Maxmar-ETL",
-    "timestamp" : 1764321201460
+    "timestamp" : 1764321917954
   }
 }
