@@ -46,12 +46,12 @@ docker exec -it postgres-maxmar psql -U postgres -d maxmar -c "SELECT slot_name,
 ## Required Registry Client (Example)
 1. Registry Clients - GitHubFlowRegistryClient 2.6.0	
     - GitHub API URL: https://api.github.com/
-    - Repository Owner: ikhsamasu
+    - Repository Owner: ikhsanmasu
     - Repository Name: ai-nifi-flows
     - Authentication Type: Personal Access Token
     - Personal Access Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     - Default Branch: ikhsan/dev
-    - Repository Path: flows
+    - Repository Path: nifi-flows-dev
     
 
 ## Required Services (Example)
@@ -67,8 +67,18 @@ docker exec -it postgres-maxmar psql -U postgres -d maxmar -c "SELECT slot_name,
     - Database Connection URL: jdbc:ch://host.docker.internal:8123
     - Database Driver Class Name: com.clickhouse.jdbc.ClickHouseDriver
     - Database Driver Location(s): /opt/nifi/nifi-current/lib/jdbc/clickhouse-jdbc-0.6.5-all.jar
-    - Database User: default
-    - Password: (kosong atau password kamu)
+    - Database User: admin
+    - Password: password123
     - Validation Query: SELECT 1
+
+* set password manual di semua sql dan invoke http
+
+## Flow setup
+1. klik garis tiga pojok kanan atas -> Controller Settings -> Registry Clients -> + (add) -> sesuaikan dengan repository yang di pakai
+2. import from registru -> sesuaikan dengan versi yang mau di add -> Import
+3. klik kanan pada main flow -> Controller Services -> beberapa service perlu input ulang password -> enable semua service
+4. periksa apakah ada processor di dalam flow -> set password -> pada flow utama klik run
+5. jika pertama kali running dan clickhouse kosong -> run once processor
+6. setup custom transform kafka
 
 

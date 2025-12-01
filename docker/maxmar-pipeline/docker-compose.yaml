@@ -93,7 +93,7 @@ services:
       - "18443:18443"
     environment:
       SINGLE_USER_CREDENTIALS_USERNAME: admin
-      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD:-adminadmin123}
+      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD:-adminnifimaxmar123}
       NIFI_WEB_HTTPS_PORT: 18443
       NIFI_WEB_HTTPS_HOST: 0.0.0.0
       NIFI_WEB_PROXY_HOST: localhost:18443
@@ -154,7 +154,7 @@ services:
     environment:
       CLICKHOUSE_DB: default
       CLICKHOUSE_USER: admin
-      CLICKHOUSE_PASSWORD: password123
+      CLICKHOUSE_PASSWORD: adminclickhousemaxmar123
       CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
     ulimits:
       nofile:

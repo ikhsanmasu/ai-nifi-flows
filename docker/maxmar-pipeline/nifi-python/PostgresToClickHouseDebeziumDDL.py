@@ -270,7 +270,7 @@ class PostgresToClickHouseDebeziumDDL(FlowFileTransform):
 
             # Determine ORDER BY and PARTITION BY
             if has_id and pk_column:
-                order_by = f"ORDER BY ({pk_column}, lsn)"
+                order_by = f"ORDER BY ({pk_column})"
                 engine = f"ReplacingMergeTree(lsn)"
             else:
                 order_by = "ORDER BY (lsn)"
